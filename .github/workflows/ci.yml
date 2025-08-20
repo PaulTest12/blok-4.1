@@ -22,11 +22,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        run: |
-          pytest -q | tee pytest-output.txt
+        run: pytest -q
 
-      - name: Upload test report
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-report
-          path: pytest-output.txt
+      - name: List repo files
+        run: ls -R
+
+
